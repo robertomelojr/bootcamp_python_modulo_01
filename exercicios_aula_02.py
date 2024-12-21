@@ -1,8 +1,53 @@
 # #### Inteiros (`int`)
 
 # 1. Escreva um programa que soma dois números inteiros inseridos pelo usuário.
+
+try:
+    valor_1 = int(input("Digite o primeiro número:"))
+    valor_2 = int(input("Digite o segundo número:"))
+    soma = valor_1 + valor_2
+    
+## Possíveis erros nessa operação: 
+# Digitar uma letra em algum momento ou alguma string;
+# Cancelar sem querer o cursor teclando algo no meio da execução;
+# Digitar um número que não seja inteiro
+ 
+ 
+except ValueError :
+ print(" Um dos dois valores não é um número inteiro, tente novamente e digite um valor válido!") ## ValueError resolve para números diferentes de inteiros e strings
+
+except KeyboardInterrupt:
+    print(" Acho que você não quis inserir um número, vamos finalizar a interação.")  ## KeyboardInterrupt trata casos de ctrl + c, por exemplo 
+
+else :
+    print('A soma dos dois valores é: {0}'.format(soma)) 
+    
+
+
 # 2. Crie um programa que receba um número do usuário e calcule o resto da divisão desse número por 5.
+
+try:
+    n_usuario = int(input("Digite um número inteiro: ")) # para facilitar vamos considerar apenas números inteiros
+
+    resto_div = n_usuario % 5 
+   
+except ValueError :
+ print(" Um dos dois valores não é um número inteiro, tente novamente e digite um valor válido!") ## ValueError resolve para números diferentes de inteiros e strings
+
+except KeyboardInterrupt:
+    print(" Acho que você não quis inserir um número, vamos finalizar a interação.")  ## KeyboardInterrupt trata casos de ctrl + c, por exemplo 
+if n_usuario < 5:
+        print(f"O número {n_usuario} é menor do que 5, insira um número válido.")
+elif resto_div == 0 :
+        print("O resto do número inserido é 0")     
+else :
+    print('O resto da divisão por 5 é:'.format(resto_div)) 
+  
+
+
 # 3. Desenvolva um programa que multiplique dois números fornecidos pelo usuário e mostre o resultado.
+
+
 # 4. Faça um programa que peça dois números inteiros e imprima a divisão inteira do primeiro pelo segundo.
 # 5. Escreva um programa que calcule o quadrado de um número fornecido pelo usuário.
 
