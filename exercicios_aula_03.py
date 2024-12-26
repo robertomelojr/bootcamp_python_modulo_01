@@ -75,17 +75,57 @@ print(f"A temperatura é de {temperatura}°C e está classificada como {status}.
 # como `log = {'timestamp': '2021-06-23 10:00:00', 'level': 'ERROR', 'message': 'Falha na conexão'}`, 
 # escreva um programa que imprima a mensagem se a severidade for 'ERROR'.
 
+log : dict = {'timestamp': '2021-06-23 10:00:00', 'level': 'ERROR', 'message': 'Falha na conexão'}
+
+if log['level'] =='ERROR':
+    print(log['message'])
+    
+    
 ### Exercício 4: Validação de Dados de Entrada
 # Antes de processar os dados de usuários em um sistema de recomendação, 
 # você precisa garantir que cada usuário tenha idade entre 18 e 65 anos e tenha 
 # fornecido um email válido. Escreva um programa que valide essas condições 
 # e imprima "Dados de usuário válidos" ou o erro específico encontrado.
 
+from typing import Dict 
+
+usuario_dict : dict[str,int]= {}
+
+usuario_dict = {
+    'Roberto': 26,
+    'João': 80,
+    'Ana': 18,
+    'Paulo': 65,
+    'Alex': 17,
+   'Maria': 18}
+
+
+for user, age in usuario_dict.items():
+     if not 18 <= age <= 65:
+        print(f"Error: O usuário {user} não tem idade para utilizar a plataforma!")
+     else: 
+        print(f"Dados válidos!")
+
+
 ### Exercício 5: Detecção de Anomalias em Dados de Transações
 # Você está trabalhando em um sistema de detecção de fraude e precisa identificar 
 # transações suspeitas. Uma transação é considerada suspeita se o valor for superior 
 # a R$ 10.000 ou se ocorrer fora do horário comercial (antes das 9h ou depois das 18h). 
 # Dada uma transação como `transacao = {'valor': 12000, 'hora': 20}`, verifique se ela é suspeita.
+
+usuartransacaoio_dict : dict[float,any]= {}
+
+transacao = {12000: 20,
+             10:10,
+             1000:23}
+
+
+for valor, hour in transacao.items():
+    
+     if not 9 <= hour <= 18 or valor >= 10000  :
+         
+        print(f"Atenção: a transação de {valor} às {hour} pode ser uma fraude!")
+ 
 
 ### Exercício 6. Contagem de Palavras em Textos
 # Objetivo:** Dado um texto, contar quantas vezes cada palavra única aparece nele.
